@@ -44,5 +44,4 @@ dependencies {
     compile 'com.growingio.android:vds-android-agent:0.9.85'
 
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
 }
