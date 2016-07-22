@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_documents"
+            android:icon="@drawable/ic_menu_send"
+            android:title="集成文档" />
+        <item
+            android:id="@+id/nav_source_code"
+            android:icon="@drawable/ic_menu_send"
+            android:title="示例源代码" />
+        <item
+            android:id="@+id/nav_website"
+            android:icon="@drawable/ic_menu_send"
+            android:title="GrowingIO官网" />
+        <item
+            android:id="@+id/nav_free_try"
+            android:icon="@drawable/ic_menu_send"
+            android:title="免费试用GrowingIO" />
+    </group>
+
+    <item android:title="Jobs">
+        <menu>
+            <item
+                android:id="@+id/nav_job"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="正在招聘" />
+        </menu>
+    </item>
+
+</menu>

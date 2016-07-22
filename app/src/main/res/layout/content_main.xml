@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_banner"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="56dp" />
+
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_banner"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/list_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="列表页"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/banner_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="轮播广告"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/webview_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="WebView"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/vp_fragment_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewPager+Fragment"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/tab_fragment_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="底部Tab切换Fragment"
+            android:textAllCaps="false"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/image_group_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="图片组合"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.growingio.android'
+
+def toolsVersion = "23.0.2"
+def supportVersion = "23.4.0"
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion toolsVersion
+    defaultConfig {
+        applicationId "com.demo.app.androidsdkdemo"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "GrowingIOProjectID", "\"${GROWINGIO_PROJECT_ID}\"")
+        buildConfigField("String", "GrowingIOURLScheme", "\"${GROWINGIO_URL_SCHEME}\"")
+        manifestPlaceholders = [GrowingIOURLScheme: "${GROWINGIO_URL_SCHEME}"]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:${supportVersion}"
+    compile "com.android.support:design:${supportVersion}"
+    compile "com.android.support:cardview-v7:${supportVersion}"
+
+    compile 'com.growingio.android:vds-android-agent:0.9.85'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
+}
