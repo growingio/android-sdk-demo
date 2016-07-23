@@ -52,16 +52,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ViewPager+Fragment"
-            android:textAllCaps="false"
-            android:visibility="gone" />
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/tab_fragment_demo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="底部Tab切换Fragment"
-            android:textAllCaps="false"
-            android:visibility="gone" />
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/image_group_demo"

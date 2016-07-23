@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.demo.app.androidsdkdemo.SystemWebActivity">
 
+    <ProgressBar
+        android:id="@+id/webview_load_progress"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:progress="20"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
     <WebView
         android:id="@+id/sys_webview"
         android:layout_width="match_parent"

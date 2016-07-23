@@ -22,6 +22,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.growingio.android.sdk.collection.GrowingIO;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity
     {
         ACTIVITIES.put(R.id.list_demo, ListActivity.class);
         ACTIVITIES.put(R.id.webview_demo, SystemWebActivity.class);
+        ACTIVITIES.put(R.id.vp_fragment_demo, ViewPagerFragmentActivity.class);
+        ACTIVITIES.put(R.id.tab_fragment_demo, TabActivity.class);
     }
 
     private BannerClickListener mBannerListener = new BannerClickListener() {
@@ -125,6 +128,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         findViewById(R.id.list_demo).setOnClickListener(mClickListener);
         findViewById(R.id.webview_demo).setOnClickListener(mClickListener);
+        findViewById(R.id.vp_fragment_demo).setOnClickListener(mClickListener);
+        findViewById(R.id.tab_fragment_demo).setOnClickListener(mClickListener);
         initBanner();
     }
 
@@ -150,6 +155,7 @@ public class MainActivity extends AppCompatActivity
         });
         banner.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         banner.scrollToPosition(Integer.MAX_VALUE / 2);
+        GrowingIO.trackBanner(banner, BLOG_POSTS);
     }
 
     @Override
@@ -178,7 +184,7 @@ public class MainActivity extends AppCompatActivity
 
         BannerClickListener listener;
 
-        public BannerItemHolder(ImageView itemView, BannerClickListener listener) {
+        BannerItemHolder(ImageView itemView, BannerClickListener listener) {
             super(itemView);
             this.listener = listener;
             itemView.setOnClickListener(this);
