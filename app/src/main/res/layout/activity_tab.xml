@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_view_tab"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.demo.app.androidsdkdemo.TabActivity">
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toBottomOf="@id/activity_view_tab"
-        app:layout_constraintTop_toTopOf="@id/activity_view_tab" />
+        android:layout_weight="1" />
 
     <RadioGroup
         android:id="@+id/bottom_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:orientation="horizontal"
+        android:layout_weight="0"
         android:checkedButton="@+id/saas_boom"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_container">
+        android:orientation="horizontal">
 
         <RadioButton
-            style="@style/ButtonTabBarStyle"
             android:id="@+id/saas_boom"
+            style="@style/ButtonTabBarStyle"
             android:text="Saas全面爆发" />
 
         <RadioButton
-            style="@style/ButtonTabBarStyle"
             android:id="@+id/linkedin_acquisition"
+            style="@style/ButtonTabBarStyle"
             android:text="LinkedIn被收购" />
 
         <RadioButton
@@ -39,4 +37,4 @@
             android:text="数据采集" />
     </RadioGroup>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -28,24 +28,23 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         LeakCanary.install(this);
-        GrowingIO.startWithConfiguration(this, new Configuration(BuildConfig.GrowingIOProjectID)
-                .setURLScheme(BuildConfig.GrowingIOURLScheme)
+        GrowingIO.startWithConfiguration(this, new Configuration()
                 .useID()
                 .trackAllFragments()
                 .setDebugMode(true)
-        .setActivityLifecycleCallbacksRegistrar(new ActivityLifecycleCallbacksRegistrar() {
-            @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-            @Override
-            public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
-                MyApplication.this.registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
-            }
+                .setActivityLifecycleCallbacksRegistrar(new ActivityLifecycleCallbacksRegistrar() {
+                    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+                    @Override
+                    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
+                        MyApplication.this.registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
+                    }
 
-            @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-            @Override
-            public void unRegisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
-                MyApplication.this.unregisterActivityLifecycleCallbacks(activityLifecycleCallbacks);
-            }
-        }));
+                    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+                    @Override
+                    public void unRegisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
+                        MyApplication.this.unregisterActivityLifecycleCallbacks(activityLifecycleCallbacks);
+                    }
+                }));
         initFloatView();
     }
 

@@ -1,10 +1,12 @@
 package com.demo.app.androidsdkdemo;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+
+import com.growingio.android.sdk.collection.GrowingIO;
 
 public class ViewPagerFragmentActivity extends AppCompatActivity {
 
@@ -16,13 +18,29 @@ public class ViewPagerFragmentActivity extends AppCompatActivity {
         pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
+                GrowingIO growingio = GrowingIO.getInstance();
                 switch (position) {
-                    case 0:
-                        return new TabActivity.FirstPostFragment();
-                    case 1:
-                        return new TabActivity.SecondPostFragment();
-                    case 2:
-                        return new TabActivity.ThirdPostFragment();
+                    case 0: {
+                        Fragment frag = new TabActivity.FirstPostFragment();
+                        growingio.setPageGroup(frag, "P" + position);
+                        growingio.setPS1(frag, "postid" + position);
+                        return frag;
+                    }
+
+                    case 1: {
+                        Fragment frag = new TabActivity.FirstPostFragment();
+                        growingio.setPageGroup(frag, "P" + position);
+                        growingio.setPS1(frag, "postid" + position);
+                        return frag;
+                    }
+
+                    case 2: {
+                        Fragment frag = new TabActivity.FirstPostFragment();
+                        growingio.setPageGroup(frag, "P" + position);
+                        growingio.setPS1(frag, "postid" + position);
+                        return frag;
+                    }
+
                     default:
                         return null;
                 }

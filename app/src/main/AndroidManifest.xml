@@ -18,6 +18,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +31,7 @@
             android:name=".GrowingIOCircleActivity"
             android:targetActivity=".MainActivity">
             <intent-filter>
-                <data android:scheme="${GrowingIOURLScheme}" />
+                <data android:scheme="@string/growingio_url_scheme" />
 
                 <action android:name="android.intent.action.VIEW" />
 
@@ -45,9 +46,8 @@
         <activity
             android:name=".SystemWebActivity"
             android:label="系统WebView示例" />
-        <activity android:name=".BannerActivity" />
         <activity android:name=".ViewPagerFragmentActivity" />
-        <activity android:name=".TabActivity"></activity>
+        <activity android:name=".TabActivity" />
     </application>
 
 </manifest>
