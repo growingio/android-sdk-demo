@@ -15,3 +15,8 @@ android:
     - '.+'
 
 script: ./gradlew build
+
+cache:
+  directories:
+    - $HOME/.gradle
+  timeout: 86400
