@@ -2,18 +2,19 @@
 
 buildscript {
     repositories {
-        mavenLocal()
+//        mavenLocal()
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-        classpath 'com.growingio.android:vds-gradle-plugin:0.9.86'
+        classpath 'com.growingio.android:vds-gradle-plugin:0.9.87'
+//        classpath 'com.growingio.android:vds-class-rewriter:0.9.87'
     }
 }
 
 allprojects {
     repositories {
-        mavenLocal()
+//        mavenLocal()
         jcenter()
     }
 }

@@ -16,6 +16,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID)
         resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME)
+        resValue("string", "growingio_channel", "Github")
     }
     buildTypes {
         release {
@@ -39,7 +40,7 @@ dependencies {
     compile "com.android.support:cardview-v7:${supportVersion}"
 
 
-    compile 'com.growingio.android:vds-android-agent:0.9.86'
+    compile 'com.growingio.android:vds-android-agent:0.9.87'
     compile 'com.squareup.picasso:picasso:2.5.2'
     testCompile 'junit:junit:4.12'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'

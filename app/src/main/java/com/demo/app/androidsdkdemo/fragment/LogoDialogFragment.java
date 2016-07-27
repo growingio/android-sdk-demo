@@ -1,4 +1,4 @@
-package com.demo.app.androidsdkdemo;
+package com.demo.app.androidsdkdemo.fragment;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.demo.app.androidsdkdemo.R;
 
 /**
  * Created by lishaojie on 16/7/21.

@@ -53,6 +53,7 @@ public class SystemWebActivity extends AppCompatActivity {
                 }
             }
         });
-        webView.loadUrl("https://blog.growingio.com");
+//        webView.loadUrl("https://blog.growingio.com");
+        webView.loadUrl("http://dev.ufile.ucloud.cn/test.html");
     }
 }

@@ -32,6 +32,7 @@ public class MyApplication extends Application {
                 .useID()
                 .trackAllFragments()
                 .setDebugMode(true)
+                .setChannel("IEIE")
                 .setActivityLifecycleCallbacksRegistrar(new ActivityLifecycleCallbacksRegistrar() {
                     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
                     @Override
