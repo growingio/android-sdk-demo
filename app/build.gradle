@@ -9,7 +9,7 @@ android {
     buildToolsVersion toolsVersion
     defaultConfig {
         applicationId "com.demo.app.androidsdkdemo"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -17,6 +17,7 @@ android {
         resValue("string", "growingio_project_id", GROWINGIO_PROJECT_ID)
         resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME)
         resValue("string", "growingio_channel", "Github")
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -28,22 +29,67 @@ android {
         abortOnError false
     }
 
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile "com.android.support:support-v4:${supportVersion}"
     compile "com.android.support:appcompat-v7:${supportVersion}"
     compile "com.android.support:design:${supportVersion}"
     compile "com.android.support:cardview-v7:${supportVersion}"
+    compile "com.android.support:palette-v7:${supportVersion}"
 
+    compile 'com.growingio.android:vds-android-agent:0.9.88'
 
-    compile 'com.growingio.android:vds-android-agent:0.9.87'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    testCompile 'junit:junit:4.12'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
+    // 添加更多库来超过64K方法数限制
+    compile 'com.google.firebase:firebase-messaging:9.2.1'
+    compile 'com.google.firebase:firebase-auth:9.2.1'
+    compile 'com.google.firebase:firebase-crash:9.2.1'
+    compile 'com.google.firebase:firebase-invites:9.2.1'
+    compile 'com.google.firebase:firebase-ads:9.2.1'
+    compile 'com.google.firebase:firebase-config:9.2.1'
+    compile 'com.facebook.stetho:stetho:1.2.0'
+    compile 'com.facebook.stetho:stetho-okhttp:1.2.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'io.reactivex:rxjava:1.0.16'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.google.dagger:dagger:2.0'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'de.hdodenhof:circleimageview:1.3.0'
+    compile 'com.mixpanel.android:mixpanel-android:4.6.4'
+    compile 'joda-time:joda-time:2.8.2'
+    compile 'com.facebook.fresco:fresco:0.8.1'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.1.1'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.github.brianPlummer:tinydancer:0.0.9'
 }
+
+apply plugin: 'com.google.gms.google-services'

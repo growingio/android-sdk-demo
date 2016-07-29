@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "527733424289",
+    "project_id": "ascendant-shade-795"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527733424289:android:f27fd7b9861ddc6e",
+        "android_client_info": {
+          "package_name": "com.demo.app.androidsdkdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVyCghHbx9pnfbOWYeAIYtNfsz8x2QK0Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-53784412-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

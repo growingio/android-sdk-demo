@@ -23,11 +23,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.growingio.android.sdk.collection.GrowingIO;
-import com.squareup.picasso.Picasso;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
@@ -148,7 +146,7 @@ public class MainActivity extends AppCompatActivity
 
             @Override
             public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-                Picasso.with(MainActivity.this).load(BANNER_IMAGES.get(position % BANNER_IMAGES.size())).into((ImageView) holder.itemView);
+                Glide.with(MainActivity.this).load(BANNER_IMAGES.get(position % BANNER_IMAGES.size())).into((ImageView) holder.itemView);
             }
 
             @Override
@@ -159,12 +157,6 @@ public class MainActivity extends AppCompatActivity
         banner.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         banner.scrollToPosition(Integer.MAX_VALUE / 2);
         GrowingIO.trackBanner(banner, BLOG_POSTS);
-        try {
-            URL a = new URL("ssdfsdf");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            Toast.makeText(this, "catching exception", Toast.LENGTH_SHORT).show();
-        }
     }
 
     @Override
