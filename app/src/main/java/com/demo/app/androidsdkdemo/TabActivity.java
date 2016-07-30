@@ -15,6 +15,8 @@ import com.demo.app.androidsdkdemo.fragment.SecondPostFragment;
 import com.demo.app.androidsdkdemo.fragment.ThirdPostFragment;
 import com.squareup.picasso.Callback;
 
+import java.lang.ref.WeakReference;
+
 public class TabActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private static final String TAG = "TabActivity";
@@ -47,14 +49,16 @@ public class TabActivity extends AppCompatActivity implements RadioGroup.OnCheck
 
     public static class AutoResizeCallback implements Callback {
 
-        ImageView image;
+        WeakReference<ImageView> imageRef;
 
         public AutoResizeCallback(ImageView image) {
-            this.image = image;
+            this.imageRef = new WeakReference<ImageView>(image);
         }
 
         @Override
         public void onSuccess() {
+            ImageView image = imageRef.get();
+            if (image == null) return;
             int width = image.getDrawable().getIntrinsicWidth();
             int height = image.getDrawable().getIntrinsicHeight();
             float scale = 1.f * image.getResources().getDisplayMetrics().widthPixels / width;
