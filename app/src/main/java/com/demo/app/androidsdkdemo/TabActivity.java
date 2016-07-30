@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -67,4 +68,9 @@ public class TabActivity extends AppCompatActivity implements RadioGroup.OnCheck
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        setTitle("bug #711");
+        return super.onOptionsItemSelected(item);
+    }
 }

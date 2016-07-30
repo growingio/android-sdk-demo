@@ -66,12 +66,12 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
 
     // 添加更多库来超过64K方法数限制
-    compile 'com.google.firebase:firebase-messaging:9.2.1'
-    compile 'com.google.firebase:firebase-auth:9.2.1'
-    compile 'com.google.firebase:firebase-crash:9.2.1'
-    compile 'com.google.firebase:firebase-invites:9.2.1'
-    compile 'com.google.firebase:firebase-ads:9.2.1'
-    compile 'com.google.firebase:firebase-config:9.2.1'
+//    compile 'com.google.firebase:firebase-messaging:9.2.1'
+//    compile 'com.google.firebase:firebase-auth:9.2.1'
+//    compile 'com.google.firebase:firebase-crash:9.2.1'
+//    compile 'com.google.firebase:firebase-invites:9.2.1'
+//    compile 'com.google.firebase:firebase-ads:9.2.1'
+//    compile 'com.google.firebase:firebase-config:9.2.1'
     compile 'com.facebook.stetho:stetho:1.2.0'
     compile 'com.facebook.stetho:stetho-okhttp:1.2.0'
     compile 'com.jakewharton:butterknife:7.0.1'
@@ -92,4 +92,4 @@ dependencies {
     compile 'com.github.brianPlummer:tinydancer:0.0.9'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
