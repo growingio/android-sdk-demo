@@ -7,9 +7,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-        classpath 'com.growingio.android:vds-gradle-plugin:0.9.88'
-//        classpath 'com.growingio.android:vds-class-rewriter:0.9.88'
-        classpath 'com.google.gms:google-services:3.0.0'
+        classpath 'com.growingio.android:vds-gradle-plugin:0.9.90'
+//        classpath 'com.growingio.android:vds-class-rewriter:0.9.90'
+//        classpath 'com.google.gms:google-services:3.0.0'
     }
 }
 

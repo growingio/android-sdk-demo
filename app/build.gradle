@@ -55,7 +55,7 @@ dependencies {
     compile "com.android.support:cardview-v7:${supportVersion}"
     compile "com.android.support:palette-v7:${supportVersion}"
 
-    compile 'com.growingio.android:vds-android-agent:0.9.88'
+    compile 'com.growingio.android:vds-android-agent:0.9.90'
 
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
