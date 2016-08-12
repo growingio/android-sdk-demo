@@ -28,8 +28,8 @@
         </activity>
 
         <activity-alias
-            android:name="GrowingIOCircleActivity"
-            android:targetActivity="MainActivity">
+            android:name=".GrowingIOCircleActivity"
+            android:targetActivity=".MainActivity">
             <intent-filter>
                 <data android:scheme="@string/growingio_url_scheme" />
 
@@ -48,6 +48,7 @@
             android:label="系统WebView示例" />
         <activity android:name=".ViewPagerFragmentActivity" />
         <activity android:name=".TabActivity" />
+        <activity android:name=".Tab2Activity" />
     </application>
 
 </manifest>

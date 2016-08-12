@@ -1,6 +1,7 @@
 package com.demo.app.androidsdkdemo;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,9 +22,10 @@ public class TabActivity extends AppCompatActivity implements RadioGroup.OnCheck
 
     private static final String TAG = "TabActivity";
 
-    private FirstPostFragment[] mFragments = new FirstPostFragment[]{
+    protected FirstPostFragment[] mFragments = new FirstPostFragment[]{
             new FirstPostFragment(), new SecondPostFragment(), new ThirdPostFragment()
     };
+    protected Fragment mCurrentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +35,18 @@ public class TabActivity extends AppCompatActivity implements RadioGroup.OnCheck
         assert tabBar != null;
         tabBar.check(tabBar.getChildAt(0).getId());
         tabBar.setOnCheckedChangeListener(this);
-        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-        trans.add(R.id.fragment_container, mFragments[0]);
-        trans.commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mFragments[0]).commit();
+        mCurrentFragment = mFragments[0];
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         int tabIndex = group.indexOfChild(group.findViewById(checkedId));
         Log.i(TAG, "onCheckedChanged: " + tabIndex);
+        switchTab(tabIndex);
+    }
+
+    protected void switchTab(int tabIndex) {
         FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
         trans.replace(R.id.fragment_container, mFragments[tabIndex]);
         trans.commit();

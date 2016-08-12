@@ -45,7 +45,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -54,16 +53,6 @@ dependencies {
     compile "com.android.support:design:${supportVersion}"
     compile "com.android.support:cardview-v7:${supportVersion}"
     compile "com.android.support:palette-v7:${supportVersion}"
-
-    compile 'com.growingio.android:vds-android-agent:0.9.90'
-
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.bugtags.library:bugtags-lib:latest.integration'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
 
     // 添加更多库来超过64K方法数限制
 //    compile 'com.google.firebase:firebase-messaging:9.2.1'
@@ -90,6 +79,15 @@ dependencies {
 //    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.1.1'
 //    compile 'com.umeng.analytics:analytics:latest.integration'
 //    compile 'com.github.brianPlummer:tinydancer:0.0.9'
+    compile 'com.growingio.android:vds-android-agent:0.9.90'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
 }
 
 //apply plugin: 'com.google.gms.google-services'

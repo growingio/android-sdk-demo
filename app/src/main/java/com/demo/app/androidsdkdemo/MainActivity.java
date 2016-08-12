@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         ACTIVITIES.put(R.id.webview_demo, SystemWebActivity.class);
         ACTIVITIES.put(R.id.vp_fragment_demo, ViewPagerFragmentActivity.class);
         ACTIVITIES.put(R.id.tab_fragment_demo, TabActivity.class);
+        ACTIVITIES.put(R.id.tab_fragment_demo2, Tab2Activity.class);
     }
 
     private BannerClickListener mBannerListener = new BannerClickListener() {
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.webview_demo).setOnClickListener(mClickListener);
         findViewById(R.id.vp_fragment_demo).setOnClickListener(mClickListener);
         findViewById(R.id.tab_fragment_demo).setOnClickListener(mClickListener);
+        findViewById(R.id.tab_fragment_demo2).setOnClickListener(mClickListener);
         initBanner();
     }
 
