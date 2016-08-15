@@ -1,11 +1,9 @@
 package com.demo.app.androidsdkdemo;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,7 +12,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.growingio.android.sdk.collection.ActivityLifecycleCallbacksRegistrar;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
 import com.squareup.leakcanary.LeakCanary;
@@ -32,20 +29,7 @@ public class MyApplication extends Application {
                 .useID()
                 .trackAllFragments()
                 .setDebugMode(true)
-                .setChannel("IEIE")
-                .setActivityLifecycleCallbacksRegistrar(new ActivityLifecycleCallbacksRegistrar() {
-                    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-                    @Override
-                    public void registerActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
-                        MyApplication.this.registerActivityLifecycleCallbacks(activityLifecycleCallbacks);
-                    }
-
-                    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-                    @Override
-                    public void unRegisterActivityLifecycleCallbacks(ActivityLifecycleCallbacks activityLifecycleCallbacks) {
-                        MyApplication.this.unregisterActivityLifecycleCallbacks(activityLifecycleCallbacks);
-                    }
-                }));
+                .setChannel("IEIE"));
         initFloatView();
     }
 

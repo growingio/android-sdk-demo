@@ -47,8 +47,12 @@
             android:name=".SystemWebActivity"
             android:label="系统WebView示例" />
         <activity android:name=".ViewPagerFragmentActivity" />
-        <activity android:name=".TabActivity" />
-        <activity android:name=".Tab2Activity" />
+        <activity
+            android:name=".TabActivity"
+            android:label="Replace切换方式" />
+        <activity
+            android:name=".Tab2Activity"
+            android:label="Show|Hide切换方式" />
     </application>
 
 </manifest>
