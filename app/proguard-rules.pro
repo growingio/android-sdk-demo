@@ -22,3 +22,7 @@
     *;
 }
 -dontwarn com.growingio.android.sdk.**
+-dontwarn **
+-dontoptimize
+-keepnames class * extends android.app.Fragment
+-keepnames class * extends android.support.v4.app.Fragment
