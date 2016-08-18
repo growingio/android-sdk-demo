@@ -3,8 +3,6 @@ package com.demo.app.androidsdkdemo;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -42,14 +40,14 @@ public class SystemWebActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    view.evaluateJavascript("document.body.clientHeight", new ValueCallback<String>() {
-                        @Override
-                        public void onReceiveValue(String value) {
-                            Log.i(TAG, "onReceiveValue: clientHeight = " + value);
-                            webView.getLayoutParams().height = Integer.valueOf(value);
-                            webView.requestLayout();
-                        }
-                    });
+//                    view.evaluateJavascript("document.body.clientHeight", new ValueCallback<String>() {
+//                        @Override
+//                        public void onReceiveValue(String value) {
+//                            Log.i(TAG, "onReceiveValue: clientHeight = " + value);
+//                            webView.getLayoutParams().height = Integer.valueOf(value);
+//                            webView.requestLayout();
+//                        }
+//                    });
                 }
             }
         });
