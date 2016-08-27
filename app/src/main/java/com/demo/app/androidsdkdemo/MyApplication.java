@@ -29,6 +29,7 @@ public class MyApplication extends Application {
                 .useID()
                 .trackAllFragments()
                 .setDebugMode(true)
+                .setThrottle(true)
                 .setChannel("IEIE"));
         initFloatView();
     }
