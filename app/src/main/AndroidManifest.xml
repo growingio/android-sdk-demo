@@ -47,7 +47,12 @@
         <activity
             android:name=".SystemWebActivity"
             android:label="系统WebView示例" />
-        <activity android:name=".ViewPagerFragmentActivity" />
+        <activity
+            android:name=".X5WebViewActivity"
+            android:label="X5WebView示例" />
+        <activity
+            android:name=".ViewPagerFragmentActivity"
+            android:label="ViewPager切换Fragment" />
         <activity
             android:name=".TabActivity"
             android:label="Replace切换方式" />

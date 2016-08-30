@@ -1,31 +1,27 @@
 package com.demo.app.androidsdkdemo;
 
 import android.os.Build;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.webkit.JsResult;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class SystemWebActivity extends AppCompatActivity {
+import com.tencent.smtt.export.external.interfaces.JsResult;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
 
-    private static final String TAG = "SystemWebActivity";
+/**
+ * Created by lishaojie on 16/8/29.
+ */
+
+public class X5WebViewActivity extends SystemWebActivity {
+    private static final String TAG = X5WebViewActivity.class.getSimpleName();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_system_web);
-        initWebView();
-    }
-
     void initWebView() {
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.webview_load_progress);
-        final WebView webView = (WebView) findViewById(R.id.sys_webview);
+        final WebView webView = (WebView) findViewById(R.id.x5_webview);
         webView.setVisibility(View.VISIBLE);
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -40,8 +36,8 @@ public class SystemWebActivity extends AppCompatActivity {
 
             @Override
             public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                 result.confirm();
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -54,12 +50,12 @@ public class SystemWebActivity extends AppCompatActivity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
-                Log.i(TAG, "onPageFinished: " + url);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                    Log.i(TAG, "onPageFinished: " + url);
+                }
             }
         });
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            webView.setWebContentsDebuggingEnabled(true);
-        }
+        WebView.setWebContentsDebuggingEnabled(true);
         webView.loadUrl("http://dev.ufile.ucloud.cn/test.html");
     }
 }

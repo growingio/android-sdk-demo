@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     {
         ACTIVITIES.put(R.id.list_demo, ListActivity.class);
         ACTIVITIES.put(R.id.webview_demo, SystemWebActivity.class);
+        ACTIVITIES.put(R.id.x5webview_demo, X5WebViewActivity.class);
         ACTIVITIES.put(R.id.vp_fragment_demo, ViewPagerFragmentActivity.class);
         ACTIVITIES.put(R.id.tab_fragment_demo, TabActivity.class);
         ACTIVITIES.put(R.id.tab_fragment_demo2, Tab2Activity.class);
@@ -128,11 +129,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        findViewById(R.id.list_demo).setOnClickListener(mClickListener);
-        findViewById(R.id.webview_demo).setOnClickListener(mClickListener);
-        findViewById(R.id.vp_fragment_demo).setOnClickListener(mClickListener);
-        findViewById(R.id.tab_fragment_demo).setOnClickListener(mClickListener);
-        findViewById(R.id.tab_fragment_demo2).setOnClickListener(mClickListener);
+        for (int i = 0; i < ACTIVITIES.size(); i++) {
+            findViewById(ACTIVITIES.keyAt(i)).setOnClickListener(mClickListener);
+        }
         initBanner();
     }
 
