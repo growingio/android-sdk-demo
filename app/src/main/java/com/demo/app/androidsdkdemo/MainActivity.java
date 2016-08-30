@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.MenuItem;
@@ -110,7 +111,11 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "GrowingIO", Snackbar.LENGTH_LONG)
+                String location = ((MyApplication) getApplication()).mCurrentLocation;
+                if (TextUtils.isEmpty(location)) {
+                    location = "GrowingIO";
+                }
+                Snackbar.make(view, location, Snackbar.LENGTH_LONG)
                         .setAction("Click me", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

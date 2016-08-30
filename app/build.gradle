@@ -5,7 +5,7 @@ def toolsVersion = "22.0.1"
 def supportVersion = "23.4.0"
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 21
     buildToolsVersion toolsVersion
     defaultConfig {
         applicationId "com.demo.app.androidsdkdemo"
@@ -18,6 +18,20 @@ android {
         resValue("string", "growingio_url_scheme", GROWINGIO_URL_SCHEME)
         resValue("string", "growingio_channel", "Github")
         multiDexEnabled true
+        signingConfig signingConfigs.debug
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file('../debug.jks')
+            storePassword 'debug1'
+            keyAlias 'debug'
+            keyPassword 'debug1'
+        }
     }
     buildTypes {
         release {
