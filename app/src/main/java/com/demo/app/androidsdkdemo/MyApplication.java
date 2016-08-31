@@ -201,6 +201,7 @@ public class MyApplication extends Application {
             }
             Log.i("BaiduLocationApiDem", sb.toString());
             mCurrentLocation = location.getAddrStr();
+            GrowingIO.getInstance().setGeoLocation(location.getLatitude(), location.getLongitude());
         }
     }
 }
