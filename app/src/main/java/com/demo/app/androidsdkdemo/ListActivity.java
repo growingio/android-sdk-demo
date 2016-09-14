@@ -17,17 +17,22 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class ListActivity extends AppCompatActivity {
 
     private static final String TAG = "ListActivity";
+    @Bind(R.id.recycler_demo)
+    RecyclerView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_demo);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new RecyclerView.Adapter() {
+        ButterKnife.bind(this);
+        list.setLayoutManager(new LinearLayoutManager(this));
+        list.setAdapter(new RecyclerView.Adapter() {
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 return new SimpleItemHolder(getLayoutInflater().inflate(R.layout.simle_item, parent, false), new ClickHandler());

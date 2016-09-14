@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
         ACTIVITIES.put(R.id.vp_fragment_demo, ViewPagerFragmentActivity.class);
         ACTIVITIES.put(R.id.tab_fragment_demo, TabActivity.class);
         ACTIVITIES.put(R.id.tab_fragment_demo2, Tab2Activity.class);
+        ACTIVITIES.put(R.id.list_demo2, ListActivity2.class);
     }
 
     private BannerClickListener mBannerListener = new BannerClickListener() {

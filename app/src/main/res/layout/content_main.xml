@@ -80,6 +80,12 @@
             android:layout_height="wrap_content"
             android:text="图片组合"
             android:visibility="gone" />
+        <Button
+            android:id="@+id/list_demo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="列表页切换PageGroup"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

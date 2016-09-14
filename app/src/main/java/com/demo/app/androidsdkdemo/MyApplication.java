@@ -41,7 +41,6 @@ public class MyApplication extends Application {
                 .useID()
                 .trackAllFragments()
                 .setDebugMode(true)
-                .setThrottle(true)
                 .setChannel("IEIE"));
         initFloatView();
         mLocationClient = new LocationClient(getApplicationContext());     //声明LocationClient类
@@ -202,6 +201,7 @@ public class MyApplication extends Application {
             Log.i("BaiduLocationApiDem", sb.toString());
             mCurrentLocation = location.getAddrStr();
             GrowingIO.getInstance().setGeoLocation(location.getLatitude(), location.getLongitude());
+            mLocationClient.stop();
         }
     }
 }
