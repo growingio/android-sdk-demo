@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_view_pager_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.app.androidsdkdemo.ViewPagerFragmentActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp" />
+
+    <RadioGroup
+        android:id="@+id/bottom_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:checkedButton="@+id/saas_boom"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/saas_boom"
+            style="@style/ButtonTabBarStyle"
+            android:text="Saas全面爆发" />
+
+        <RadioButton
+            android:id="@+id/linkedin_acquisition"
+            style="@style/ButtonTabBarStyle"
+            android:text="LinkedIn被收购" />
+
+        <RadioButton
+            android:id="@+id/data_collection"
+            style="@style/ButtonTabBarStyle"
+            android:text="数据采集" />
+    </RadioGroup>
+</FrameLayout>

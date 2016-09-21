@@ -66,6 +66,9 @@
             android:name=".ViewPagerFragmentActivity"
             android:label="ViewPager切换Fragment" />
         <activity
+            android:name=".TabLayoutFragmentActivity"
+            android:label="TabLayout切换ViewPager" />
+        <activity
             android:name=".TabActivity"
             android:label="Replace切换方式" />
         <activity
