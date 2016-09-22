@@ -25,6 +25,7 @@
     *;
 }
 -dontwarn com.growingio.android.sdk.**
+-keepnames class * extends android.view.View
 -keep class * extends android.app.Fragment {
     public void setUserVisibleHint(boolean);
     public void onHiddenChanged(boolean);

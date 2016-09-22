@@ -1,10 +1,8 @@
 package com.demo.app.androidsdkdemo;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.PixelFormat;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -75,47 +73,6 @@ public class MyApplication extends Application {
             @Override
             public void onClick(View v) {
                 windowManager.removeView(floatingView);
-            }
-        });
-
-        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
-            @Override
-            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-
-            }
-
-            @Override
-            public void onActivityStarted(Activity activity) {
-
-            }
-
-            @Override
-            public void onActivityResumed(Activity activity) {
-                if (floatingView.getParent() != null) {
-                    floatingView.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onActivityPaused(Activity activity) {
-                if (floatingView.getParent() != null) {
-                    floatingView.setVisibility(View.GONE);
-                }
-            }
-
-            @Override
-            public void onActivityStopped(Activity activity) {
-
-            }
-
-            @Override
-            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-
-            }
-
-            @Override
-            public void onActivityDestroyed(Activity activity) {
-
             }
         });
     }
