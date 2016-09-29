@@ -67,7 +67,6 @@ public class MyApplication extends Application {
         textView.setText("悬浮窗");
         ((ViewGroup) floatingView.findViewById(R.id.cardView)).addView(textView);
         final WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-        windowManager.addView(floatingView, maskParams);
 
         floatingView.findViewById(R.id.cardView).setOnClickListener(new View.OnClickListener() {
             @Override
