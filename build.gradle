@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
         classpath 'com.growingio.android:vds-gradle-plugin:' + GROWINGIO_SDK_VERSION
+        classpath 'com.growingio.android:vds-class-rewriter:' + GROWINGIO_SDK_VERSION
     }
 }
 
