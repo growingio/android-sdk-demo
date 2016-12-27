@@ -3,9 +3,7 @@ package com.demo.app.androidsdkdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.growingio.android.sdk.collection.GrowingIO;
@@ -28,20 +26,6 @@ public class ListActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_list2);
         ButterKnife.bind(this);
         onClickPg1(null);
-        listview.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-            }
-        });
-        listview.getViewTreeObserver().addOnGlobalFocusChangeListener(new ViewTreeObserver.OnGlobalFocusChangeListener() {
-            @Override
-            public void onGlobalFocusChanged(View oldFocus, View newFocus) {
-                if (oldFocus instanceof EditText) {
-
-                }
-            }
-        });
     }
 
     @OnClick(R.id.switchPg1)

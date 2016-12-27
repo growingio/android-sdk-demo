@@ -1,8 +1,8 @@
 package com.demo.app.androidsdkdemo;
 
-import android.app.Application;
 import android.content.Context;
 import android.graphics.PixelFormat;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -18,7 +18,6 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
-import com.squareup.leakcanary.LeakCanary;
 
 import java.util.List;
 
@@ -26,7 +25,8 @@ import java.util.List;
  * Created by lishaojie on 16/7/16.
  */
 
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
+    private static final String TAG = "嘛嘛嘛";
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
     public String mCurrentLocation;
@@ -34,7 +34,8 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        LeakCanary.install(this);
+        Log.w(TAG, "onCreate: 哈哈哈");
+//        LeakCanary.install(this);
         GrowingIO.startWithConfiguration(this, new Configuration()
                 .useID()
                 .trackAllFragments()
@@ -121,7 +122,6 @@ public class MyApplication extends Application {
                 sb.append(location.getAddrStr());
                 sb.append("\ndescribe : ");
                 sb.append("gps定位成功");
-
             } else if (location.getLocType() == BDLocation.TypeNetWorkLocation) {// 网络定位结果
                 sb.append("\naddr : ");
                 sb.append(location.getAddrStr());
@@ -156,11 +156,6 @@ public class MyApplication extends Application {
             }
             Log.i("BaiduLocationApiDem", sb.toString());
             mCurrentLocation = location.getAddrStr();
-            try {
-                GrowingIO.getInstance().setGeoLocation(location.getLatitude(), location.getLongitude());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             mLocationClient.stop();
         }
     }

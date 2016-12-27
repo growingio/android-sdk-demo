@@ -23,6 +23,15 @@ public class SystemWebActivity extends AppCompatActivity {
         initWebView();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        WebView webView = (WebView) findViewById(R.id.sys_webview);
+        if (webView != null) {
+            webView.destroy();
+        }
+    }
+
     void initWebView() {
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.webview_load_progress);
         final WebView webView = (WebView) findViewById(R.id.sys_webview);

@@ -23,12 +23,5 @@
             android:layout_height="match_parent"
             android:layout_marginTop="3dp"
             android:visibility="gone" />
-
-        <com.demo.app.androidsdkdemo.widgets.CustomWebView
-            android:id="@+id/x5_webview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="3dp"
-            android:visibility="gone" />
     </FrameLayout>
 </FrameLayout>

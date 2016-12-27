@@ -1,6 +1,9 @@
 package com.demo.app.androidsdkdemo;
 
 import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -15,10 +18,16 @@ import com.tencent.smtt.sdk.WebViewClient;
  * Created by lishaojie on 16/8/29.
  */
 
-public class X5WebViewActivity extends SystemWebActivity {
+public class X5WebViewActivity extends AppCompatActivity {
     private static final String TAG = X5WebViewActivity.class.getSimpleName();
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_x5_webview);
+        initWebView();
+    }
+
     void initWebView() {
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.webview_load_progress);
         final WebView webView = (WebView) findViewById(R.id.x5_webview);
@@ -56,6 +65,6 @@ public class X5WebViewActivity extends SystemWebActivity {
             }
         });
         WebView.setWebContentsDebuggingEnabled(true);
-        webView.loadUrl("http://dev.ufile.ucloud.cn/test.html");
+        webView.loadUrl("http://dev.ufile.ucloud.cn/simple.html");
     }
 }
