@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationListener;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
@@ -18,6 +20,8 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.location.Poi;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
+import com.tencent.map.geolocation.TencentLocation;
+import com.tencent.map.geolocation.TencentLocationListener;
 
 import java.util.List;
 
@@ -26,7 +30,7 @@ import java.util.List;
  */
 
 public class MyApplication extends MultiDexApplication {
-    private static final String TAG = "嘛嘛嘛";
+    private static final String TAG = "Demo";
     public LocationClient mLocationClient = null;
     public BDLocationListener myListener = new MyLocationListener();
     public String mCurrentLocation;
@@ -93,6 +97,27 @@ public class MyApplication extends MultiDexApplication {
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
         mLocationClient.setLocOption(option);
         mLocationClient.start();
+
+    }
+
+    class GaodeListener implements AMapLocationListener {
+        @Override
+        public void onLocationChanged(AMapLocation aMapLocation) {
+            Log.i(TAG, "onLocationChanged: 高德地图");
+        }
+    }
+
+    class TencentListener implements TencentLocationListener {
+
+        @Override
+        public void onLocationChanged(TencentLocation tencentLocation, int i, String s) {
+            Log.i(TAG, "得到定位结果");
+        }
+
+        @Override
+        public void onStatusUpdate(String s, int i, String s1) {
+            Log.i(TAG, "onStatusUpdate++++");
+        }
     }
 
     private class MyLocationListener implements BDLocationListener {

@@ -44,3 +44,18 @@
     public void onResume();
     public void onPause();
 }
+
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    public void on*Event(...);
+}
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+-keep class com.tencent.map.geolocation.info.TxCacheData{
+    *;
+}
+-dontwarn  org.eclipse.jdt.annotation.**
+
+
+-dontnote ct.**
