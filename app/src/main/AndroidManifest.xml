@@ -21,6 +21,11 @@
     <!-- 用于读取手机当前的状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -29,6 +34,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="LMGBZ-L7LW4-GS7UR-DAFPN-7RZSV-VNFE4" />
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="0ddabe4cec0ffe6c0d36286621755314" />
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -40,7 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <service android:name="com.amap.api.location.APSService"></service>
         <activity-alias
             android:name=".GrowingIOCircleActivity"
             android:targetActivity=".MainActivity">

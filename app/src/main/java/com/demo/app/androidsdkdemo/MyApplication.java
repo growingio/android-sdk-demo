@@ -38,7 +38,6 @@ public class MyApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.w(TAG, "onCreate: 哈哈哈");
 //        LeakCanary.install(this);
         GrowingIO.startWithConfiguration(this, new Configuration()
                 .useID()
@@ -97,7 +96,6 @@ public class MyApplication extends MultiDexApplication {
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
         mLocationClient.setLocOption(option);
         mLocationClient.start();
-
     }
 
     class GaodeListener implements AMapLocationListener {
